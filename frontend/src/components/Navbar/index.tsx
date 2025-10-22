@@ -1,4 +1,4 @@
-import styles from "./styles.module.scss";
+import styles from "./styles.module.css";
 import { NavLink } from "react-router-dom";
 
 export default function NavBar() {

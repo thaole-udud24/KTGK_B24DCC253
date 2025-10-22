@@ -1,5 +1,4 @@
-/* ===== Tokens ===== */
-:global(:root) {
+:root {
   --bg: #f7f8fb;
   --card: #ffffff;
   --text: #111827;
@@ -12,21 +11,12 @@
 
 .container {
   min-height: 100vh;
-  background: radial-gradient(
-      1100px 380px at 8% -10%,
-      rgba(37, 99, 235, 0.07),
-      transparent 55%
-    ),
-    radial-gradient(
-      900px 360px at 100% 0%,
-      rgba(124, 58, 237, 0.06),
-      transparent 55%
-    ),
+  background: radial-gradient(1100px 380px at 8% -10%, rgba(37, 99, 235, 0.07), transparent 55%),
+    radial-gradient(900px 360px at 100% 0%, rgba(124, 58, 237, 0.06), transparent 55%),
     var(--bg);
   color: var(--text);
 }
 
-/* ===== Header ===== */
 .header {
   max-width: 1200px;
   margin: 0 auto;
@@ -35,17 +25,17 @@
   justify-content: space-between;
   align-items: end;
   gap: 16px;
+}
 
-  h1 {
-    font-size: clamp(24px, 3vw, 36px);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin: 0 0 6px;
-    background: linear-gradient(90deg, var(--text), var(--primary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+.header h1 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+  background: linear-gradient(90deg, var(--text), var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .sub {
@@ -67,11 +57,11 @@
   outline: none;
   font-size: 14px;
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
 
-  &:focus {
-    border-color: color-mix(in srgb, var(--primary) 45%, transparent);
-    box-shadow: 0 0 0 4px var(--ring);
-  }
+.search:focus {
+  border-color: color-mix(in srgb, var(--primary) 45%, transparent);
+  box-shadow: 0 0 0 4px var(--ring);
 }
 
 .addBtn {
@@ -84,16 +74,16 @@
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   box-shadow: 0 8px 16px rgba(37, 99, 235, 0.18);
-
-  &:hover {
-    transform: translateY(-1px);
-  }
-  &:active {
-    transform: translateY(0);
-  }
 }
 
-/* ===== Grid ===== */
+.addBtn:hover {
+  transform: translateY(-1px);
+}
+
+.addBtn:active {
+  transform: translateY(0);
+}
+
 .grid {
   max-width: 1200px;
   margin: 8px auto 32px;
@@ -101,16 +91,20 @@
   display: grid;
   gap: clamp(14px, 2vw, 22px);
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 
-  @media (max-width: 1024px) {
+@media (max-width: 1024px) {
+  .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  @media (max-width: 640px) {
+}
+
+@media (max-width: 640px) {
+  .grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* ===== Card ===== */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -128,27 +122,26 @@
   box-shadow: var(--shadow);
   overflow: hidden;
   outline: 1px solid rgba(0, 0, 0, 0.04);
-  transition: transform 220ms ease, box-shadow 220ms ease,
-    outline-color 220ms ease;
+  transition: transform 220ms ease, box-shadow 220ms ease, outline-color 220ms ease;
   animation: fadeUp 420ms ease both;
+}
 
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-    outline-color: var(--ring);
-  }
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  outline-color: var(--ring);
 }
 
 .thumbWrap {
   position: relative;
+}
 
-  img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    display: block;
-    filter: saturate(1.06);
-  }
+.thumbWrap img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.06);
 }
 
 .badge {
@@ -174,7 +167,7 @@
   margin: 4px 0 6px;
   line-height: 1.35;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -190,7 +183,6 @@
   line-height: 1.7;
   color: color-mix(in srgb, var(--text) 86%, transparent);
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 12px;
@@ -213,8 +205,7 @@
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease,
-    background-color 0.2s ease, color 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease, color 0.2s ease;
   border: 1px solid transparent;
 }
 
@@ -222,26 +213,26 @@
   background: #0ea5e9;
   color: #fff;
   box-shadow: 0 8px 16px rgba(14, 165, 233, 0.18);
+}
 
-  &:hover {
-    transform: translateY(-1px);
-  }
-  &:active {
-    transform: translateY(0);
-  }
+.detailBtn:hover {
+  transform: translateY(-1px);
+}
+
+.detailBtn:active {
+  transform: translateY(0);
 }
 
 .editBtn {
   background: #f3f4f6;
   color: #111827;
   border-color: rgba(0, 0, 0, 0.06);
-
-  &:hover {
-    background: #e5e7eb;
-  }
 }
 
-/* ===== Empty ===== */
+.editBtn:hover {
+  background: #e5e7eb;
+}
+
 .empty {
   max-width: 1200px;
   margin: 10px auto 42px;

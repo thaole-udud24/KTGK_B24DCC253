@@ -1,4 +1,4 @@
-:global(:root) {
+:root {
   --bg: linear-gradient(180deg, #f9fafc 0%, #eef2f8 100%);
   --card-bg: rgba(255, 255, 255, 0.85);
   --text: #1f2937;
@@ -22,17 +22,17 @@
   width: 100%;
   padding: 60px 24px;
   text-align: center;
+}
 
-  h1 {
-    font-size: 40px;
-    background: linear-gradient(90deg, #2563eb, #7c3aed);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 30px;
-  }
+.subContainer h1 {
+  font-size: 40px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 30px;
 }
 
 .cardWrapper {
@@ -52,93 +52,86 @@
   transition: all 0.35s ease;
   position: relative;
   cursor: pointer;
+}
 
-  &:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-  }
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
 
-  img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-  }
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
 
-  &:hover img {
-    transform: scale(1.08);
-  }
+.card:hover img {
+  transform: scale(1.08);
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-      circle at 50% 80%,
-      rgba(37, 99, 235, 0.12),
-      transparent 60%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 80%, rgba(37, 99, 235, 0.12), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-  &:hover::after {
-    opacity: 1;
-  }
+.card:hover::after {
+  opacity: 1;
 }
 
 .cardBody {
   padding: 20px 22px 28px;
   text-align: left;
+}
 
-  h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text);
-    line-height: 1.4;
-    margin-bottom: 8px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+.cardBody h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
-  .meta {
-    font-size: 14px;
-    color: var(--muted);
-    margin-bottom: 10px;
-  }
+.cardBody .meta {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
 
-  p {
-    color: #374151;
-    line-height: 1.6;
-    font-size: 15px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+.cardBody p {
+  color: #374151;
+  line-height: 1.6;
+  font-size: 15px;
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
   .subContainer {
     padding: 40px 16px;
+  }
 
-    h1 {
-      font-size: 30px;
-    }
+  .subContainer h1 {
+    font-size: 30px;
   }
 
   .card img {
     height: 180px;
   }
 
-  .cardBody {
-    h3 {
-      font-size: 18px;
-    }
+  .cardBody h3 {
+    font-size: 18px;
   }
 }

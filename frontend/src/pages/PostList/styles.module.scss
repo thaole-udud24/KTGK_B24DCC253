@@ -1,46 +1,37 @@
 :root {
-  --bg: #f7f8fb;
-  --card: #ffffff;
-  --text: #111827;
+  --bg: #f5f6fa;
+  --card: #fff;
+  --text: #1f2937;
   --muted: #6b7280;
   --primary: #2563eb;
-  --ring: rgba(37, 99, 235, 0.25);
-  --radius: 18px;
-  --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  --radius: 12px;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
 }
 
+/* Toàn trang */
 .container {
   min-height: 100vh;
-  background: radial-gradient(1100px 380px at 8% -10%, rgba(37, 99, 235, 0.07), transparent 55%),
-    radial-gradient(900px 360px at 100% 0%, rgba(124, 58, 237, 0.06), transparent 55%),
-    var(--bg);
+  background: var(--bg);
+  font-family: "Inter", sans-serif;
   color: var(--text);
+  padding: 40px 20px;
 }
 
+/* Phần đầu trang */
 .header {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 28px 20px 14px;
+  max-width: 1100px;
+  margin: 0 auto 30px;
   display: flex;
   justify-content: space-between;
-  align-items: end;
-  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .header h1 {
-  font-size: clamp(24px, 3vw, 36px);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin: 0 0 6px;
-  background: linear-gradient(90deg, var(--text), var(--primary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.sub {
-  color: var(--muted);
-  font-size: 13px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
 }
 
 .actions {
@@ -49,142 +40,80 @@
 }
 
 .search {
-  width: clamp(180px, 24vw, 280px);
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  background: #fff;
-  outline: none;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
   font-size: 14px;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  outline: none;
 }
 
 .search:focus {
-  border-color: color-mix(in srgb, var(--primary) 45%, transparent);
-  box-shadow: 0 0 0 4px var(--ring);
+  border-color: var(--primary);
 }
 
 .addBtn {
-  padding: 10px 14px;
-  border: none;
-  border-radius: 12px;
   background: var(--primary);
   color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 8px 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.18);
+  transition: background 0.2s;
 }
 
 .addBtn:hover {
-  transform: translateY(-1px);
+  background: #1e4ed8;
 }
 
-.addBtn:active {
-  transform: translateY(0);
-}
-
+/* Lưới card */
 .grid {
-  max-width: 1200px;
-  margin: 8px auto 32px;
-  padding: 0 20px;
+  max-width: 1100px;
+  margin: 0 auto;
   display: grid;
-  gap: clamp(14px, 2vw, 22px);
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(8px) scale(0.995);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
+/* Card */
 .card {
   background: var(--card);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
-  outline: 1px solid rgba(0, 0, 0, 0.04);
-  transition: transform 220ms ease, box-shadow 220ms ease, outline-color 220ms ease;
-  animation: fadeUp 420ms ease both;
+  transition: transform 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-  outline-color: var(--ring);
+  transform: translateY(-5px);
 }
 
-.thumbWrap {
-  position: relative;
-}
-
-.thumbWrap img {
+.card img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 180px;
   object-fit: cover;
-  display: block;
-  filter: saturate(1.06);
 }
 
-.badge {
-  position: absolute;
-  left: 12px;
-  bottom: 12px;
-  font-size: 12px;
-  background: color-mix(in srgb, var(--primary) 18%, white 82%);
-  color: #0f172a;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--primary) 45%, transparent);
-  backdrop-filter: blur(4px);
+.card .body {
+  padding: 16px;
 }
 
-.body {
-  padding: 16px 16px 18px;
-}
-
-.title {
+.card .title {
   font-size: 18px;
-  font-weight: 700;
-  margin: 4px 0 6px;
-  line-height: 1.35;
-  display: -webkit-box;
-
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
-.meta {
-  font-size: 13px;
+.card .meta {
   color: var(--muted);
-  margin-bottom: 8px;
+  font-size: 13px;
+  margin-bottom: 10px;
 }
 
-.desc {
+.card .desc {
   font-size: 14px;
-  line-height: 1.7;
-  color: color-mix(in srgb, var(--text) 86%, transparent);
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  line-height: 1.5;
+  color: #374151;
   margin-bottom: 12px;
 }
 
@@ -195,51 +124,32 @@
 
 .detailBtn,
 .editBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 34px;
-  padding: 0 12px;
-  border-radius: 10px;
+  flex: 1;
+  padding: 8px;
   font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease, color 0.2s ease;
-  border: 1px solid transparent;
+  text-decoration: none;
 }
 
 .detailBtn {
-  background: #0ea5e9;
+  background: var(--primary);
   color: #fff;
-  box-shadow: 0 8px 16px rgba(14, 165, 233, 0.18);
-}
-
-.detailBtn:hover {
-  transform: translateY(-1px);
-}
-
-.detailBtn:active {
-  transform: translateY(0);
 }
 
 .editBtn {
   background: #f3f4f6;
-  color: #111827;
-  border-color: rgba(0, 0, 0, 0.06);
-}
-
-.editBtn:hover {
-  background: #e5e7eb;
+  color: var(--text);
 }
 
 .empty {
-  max-width: 1200px;
-  margin: 10px auto 42px;
-  padding: 18px 20px;
+  text-align: center;
   color: var(--muted);
   background: #fff;
-  border: 1px dashed rgba(0, 0, 0, 0.12);
-  border-radius: 16px;
-  text-align: center;
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 1px dashed #ccc;
+  margin-top: 20px;
 }
+

@@ -1,77 +1,35 @@
-$primary: #2563eb;
-$text: #1f2937;
-$muted: #6b7280;
-$bg: #ffffff;
-
 .container {
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: #ffffff;
+  padding: 16px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 50;
-  backdrop-filter: blur(10px);
-  background: color-mix(in srgb, var(--card, #fff) 82%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, #000 6%, transparent);
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  padding: 12px clamp(12px, 3vw, 24px);
-
-  @media (max-width: 640px) {
-    justify-content: center;
-    gap: 12px;
-    padding: 10px 12px;
-  }
+  z-index: 10;
 }
 
 .link {
-  position: relative;
-  color: var(--text, #{$text});
   text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.01em;
-  padding: 10px 12px;
-  border-radius: 12px;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  color: #333333;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.25s ease-in-out;
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    bottom: 6px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary, #{$primary}), #7c3aed);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 220ms ease;
-    border-radius: 999px;
-  }
-
-  &:hover {
-    color: var(--primary, #{$primary});
-  }
-
-  &:hover::after {
-    transform: scaleX(1);
-  }
-
-  &:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 4px
-      color-mix(in srgb, var(--primary, #{$primary}) 30%, transparent);
-  }
+.link:hover {
+  background-color: #f3f3f3;
+  color: #0078d7;
 }
 
 .active {
-  color: var(--primary, #{$primary});
-  background: color-mix(in srgb, var(--primary, #{$primary}) 8%, transparent);
-
-  &::after {
-    transform: scaleX(1);
-  }
+  background-color: #0078d7;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 120, 215, 0.3);
 }
 
-.link + .link {
-  margin-left: 4px;
-}

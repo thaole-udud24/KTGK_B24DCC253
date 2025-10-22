@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "title": "Hướng dẫn tối ưu hiệu năng React trong dự án lớn",
+    "author": "Nguyễn Minh Khoa",
+    "publishedAt": "2025-09-12",
+    "thumbnail": "https://picsum.photos/id/1015/600/400",
+    "description": "Bài viết này trình bày chiến lược đo đạc và tối ưu hiệu năng React bằng cách phân tách bundle, dùng memo hóa, virtualize list và lazy loading. Đi kèm là checklist và ví dụ thực tế để áp dụng ngay cho team.",
+    "shortDescription": "Bài viết này trình bày chiến lược đo đạc và tối ưu hiệu năng React bằng cách phân tách bundle, dùng "
+  },
+  {
+    "id": 2,
+    "title": "Thiết kế hệ thống: từ monolith đến microservices",
+    "author": "Trần Hoài Phong",
+    "publishedAt": "2025-08-29",
+    "thumbnail": "https://picsum.photos/id/1021/600/400",
+    "description": "Chúng ta so sánh ưu và nhược điểm của kiến trúc monolith và microservices, chia sẻ lộ trình tách dịch vụ, chuẩn hóa giao tiếp, quan sát hệ thống và cách kiểm soát độ phức tạp khi quy mô tăng nhanh.",
+    "shortDescription": "Chúng ta so sánh ưu và nhược điểm của kiến trúc monolith và microservices, chia sẻ lộ trình tách dịc"
+  },
+  {
+    "id": 3,
+    "title": "Tailwind CSS: mẫu thiết kế UI nhanh và đẹp",
+    "author": "Lê Ngọc Hà",
+    "publishedAt": "2025-07-15",
+    "thumbnail": "https://picsum.photos/id/1035/600/400",
+    "description": "Tailwind CSS giúp tăng tốc quy trình xây dựng giao diện với utility-first. Bài viết đưa ra các pattern thường dùng, cách cấu hình theme, tối ưu purge và tổ chức class để codebase sạch, dễ mở rộng.",
+    "shortDescription": "Tailwind CSS giúp tăng tốc quy trình xây dựng giao diện với utility-first. Bài viết đưa ra các patte"
+  },
+  {
+    "id": 4,
+    "title": "Kinh nghiệm triển khai CI/CD với GitHub Actions",
+    "author": "Phạm Anh Dũng",
+    "publishedAt": "2025-06-30",
+    "thumbnail": "https://picsum.photos/id/1041/600/400",
+    "description": "Từ pipeline cơ bản đến quy trình phức tạp nhiều môi trường, bài viết hướng dẫn tạo workflow, cache phụ thuộc, ma trận build, bảo mật secret và chiến lược release an toàn cho ứng dụng web hiện đại.",
+    "shortDescription": "Từ pipeline cơ bản đến quy trình phức tạp nhiều môi trường, bài viết hướng dẫn tạo workflow, cache p"
+  },
+  {
+    "id": 5,
+    "title": "GraphQL hay REST: chọn gì cho sản phẩm của bạn?",
+    "author": "Đỗ Thu Trang",
+    "publishedAt": "2025-05-22",
+    "thumbnail": "https://picsum.photos/id/1050/600/400",
+    "description": "Phân tích tiêu chí lựa chọn giữa GraphQL và REST: khả năng lấy dữ liệu linh hoạt, caching, versioning, chi phí vận hành và trải nghiệm dev. Kèm theo checklist quyết định và ví dụ áp dụng thực tế.",
+    "shortDescription": "Phân tích tiêu chí lựa chọn giữa GraphQL và REST: khả năng lấy dữ liệu linh hoạt, caching, versionin"
+  },
+  {
+    "id": 6,
+    "title": "Bí kíp tăng tốc Next.js với Edge & ISR",
+    "author": "Vũ Quang Huy",
+    "publishedAt": "2025-05-10",
+    "thumbnail": "https://picsum.photos/id/1060/600/400",
+    "description": "Khai thác Edge Runtime, Route Handlers và Incremental Static Regeneration để đạt TTFB thấp và SEO tốt. Bài viết kèm cấu hình mẫu, mẹo tránh bẫy thường gặp và cách theo dõi chỉ số Core Web Vitals.",
+    "shortDescription": "Khai thác Edge Runtime, Route Handlers và Incremental Static Regeneration để đạt TTFB thấp và SEO tố"
+  },
+  {
+    "id": 7,
+    "title": "Xây dựng design system bền vững",
+    "author": "Ngô Thùy Dương",
+    "publishedAt": "2025-04-18",
+    "thumbnail": "https://picsum.photos/id/1074/600/400",
+    "description": "Từ token thiết kế, component library đến guideline sử dụng, bài viết nêu phương pháp quản trị phiên bản, quy trình review, tự động hóa tài liệu và cách thúc đẩy adoption trong toàn bộ tổ chức.",
+    "shortDescription": "Từ token thiết kế, component library đến guideline sử dụng, bài viết nêu phương pháp quản trị phiên "
+  },
+  {
+    "id": 8,
+    "title": "PostgreSQL nâng cao: index và tối ưu truy vấn",
+    "author": "Lâm Quốc Việt",
+    "publishedAt": "2025-04-02",
+    "thumbnail": "https://picsum.photos/id/1084/600/400",
+    "description": "Giải thích cơ chế hoạt động của B-Tree, Hash, GIN, BRIN; cách đọc EXPLAIN ANALYZE; chiến lược partitioning và tối ưu join. Đi kèm là các anti-pattern phổ biến khiến truy vấn chậm và cách khắc phục.",
+    "shortDescription": "Giải thích cơ chế hoạt động của B-Tree, Hash, GIN, BRIN; cách đọc EXPLAIN ANALYZE; chiến lược partit"
+  },
+  {
+    "id": 9,
+    "title": "Docker cho frontend: nhẹ mà hiệu quả",
+    "author": "Bùi Gia Khánh",
+    "publishedAt": "2025-03-21",
+    "thumbnail": "https://picsum.photos/id/109/600/400",
+    "description": "Hướng dẫn tạo image nhỏ gọn cho ứng dụng FE với multi-stage build, caching hợp lý, tách phụ thuộc dev và prod, cùng các mẹo bảo mật cơ bản để deploy nhanh, an toàn trên nhiều môi trường khác nhau.",
+    "shortDescription": "Hướng dẫn tạo image nhỏ gọn cho ứng dụng FE với multi-stage build, caching hợp lý, tách phụ thuộc de"
+  },
+  {
+    "id": 10,
+    "title": "Accessibility: làm sản phẩm dễ tiếp cận",
+    "author": "Phạm Quỳnh",
+    "publishedAt": "2025-03-07",
+    "thumbnail": "https://picsum.photos/id/110/600/400",
+    "description": "Tại sao a11y quan trọng và cách áp dụng: semantic HTML, ARIA đúng chỗ, focus management, contrast, keyboard nav. Đính kèm checklist kiểm thử và plugin hỗ trợ giúp nhóm phát hiện sớm vấn đề.",
+    "shortDescription": "Tại sao a11y quan trọng và cách áp dụng: semantic HTML, ARIA đúng chỗ, focus management, contrast, k"
+  },
+  {
+    "id": 11,
+    "title": "Web performance: đo đúng trước tối ưu",
+    "author": "Trịnh Hải Đăng",
+    "publishedAt": "2025-02-18",
+    "thumbnail": "https://picsum.photos/id/111/600/400",
+    "description": "Trước khi tối ưu, cần xác định nút thắt cổ chai qua RUM, lab test và profiling. Bài viết hướng dẫn chọn KPI, đọc báo cáo Lighthouse, tách ảnh hưởng mạng, CPU và render để có quyết định chính xác.",
+    "shortDescription": "Trước khi tối ưu, cần xác định nút thắt cổ chai qua RUM, lab test và profiling. Bài viết hướng dẫn c"
+  },
+  {
+    "id": 12,
+    "title": "State management hiện đại: từ Redux đến Signals",
+    "author": "Nguyễn Thanh Tùng",
+    "publishedAt": "2025-02-03",
+    "thumbnail": "https://picsum.photos/id/112/600/400",
+    "description": "Lịch sử quản lý state trên web và xu hướng mới với signals, server components. So sánh ưu nhược, bẫy re-render và đề xuất kiến trúc phối hợp để code đơn giản hơn nhưng vẫn dễ kiểm soát.",
+    "shortDescription": "Lịch sử quản lý state trên web và xu hướng mới với signals, server components. So sánh ưu nhược, bẫy"
+  },
+  {
+    "id": 13,
+    "title": "Bảo mật ứng dụng: những lỗ hổng thường gặp",
+    "author": "Hoàng Mỹ Linh",
+    "publishedAt": "2025-01-20",
+    "thumbnail": "https://picsum.photos/id/113/600/400",
+    "description": "Tổng hợp các lỗ hổng phổ biến như XSS, CSRF, SSRF, SQLi và cách phòng tránh. Bài viết đưa ra quy trình threat modeling, test tự động và mẹo cấu hình header bảo mật cho ứng dụng sản xuất.",
+    "shortDescription": "Tổng hợp các lỗ hổng phổ biến như XSS, CSRF, SSRF, SQLi và cách phòng tránh. Bài viết đưa ra quy trì"
+  },
+  {
+    "id": 14,
+    "title": "Svelte và trải nghiệm dev tối giản",
+    "author": "Trần Quốc Bảo",
+    "publishedAt": "2024-12-28",
+    "thumbnail": "https://picsum.photos/id/114/600/400",
+    "description": "Svelte mang đến trải nghiệm viết ít, chạy nhanh nhờ compile-time. Bài viết nêu cách tổ chức dự án, routing, form, store và tối ưu build để sản phẩm nhỏ gọn, dễ bảo trì nhưng vẫn giàu tính năng.",
+    "shortDescription": "Svelte mang đến trải nghiệm viết ít, chạy nhanh nhờ compile-time. Bài viết nêu cách tổ chức dự án, r"
+  },
+  {
+    "id": 15,
+    "title": "Testing chiến lược: unit, integration, e2e",
+    "author": "Phạm Hữu Lộc",
+    "publishedAt": "2024-11-30",
+    "thumbnail": "https://picsum.photos/id/115/600/400",
+    "description": "Làm sao cân bằng giữa độ phủ và chi phí? Bài viết đề xuất kim tự tháp test linh hoạt, ví dụ cụ thể với Vitest, Playwright, fixture dữ liệu và cách chạy song song để rút ngắn thời gian phản hồi.",
+    "shortDescription": "Làm sao cân bằng giữa độ phủ và chi phí? Bài viết đề xuất kim tự tháp test linh hoạt, ví dụ cụ thể v"
+  },
+  {
+    "id": 16,
+    "title": "Hiểu đúng về SEO kỹ thuật cho SPA",
+    "author": "Đặng Thu Hằng",
+    "publishedAt": "2024-11-12",
+    "thumbnail": "https://picsum.photos/id/116/600/400",
+    "description": "SPA vẫn SEO tốt nếu dựng đúng: server-side render, pre-render, sitemap, structured data và quản lý redirect. Bài viết có checklist cấu hình và mẹo kiểm tra index để tránh mất traffic ngoài ý muốn.",
+    "shortDescription": "SPA vẫn SEO tốt nếu dựng đúng: server-side render, pre-render, sitemap, structured data và quản lý r"
+  },
+  {
+    "id": 17,
+    "title": "Quản trị dự án agile thực dụng",
+    "author": "Lý Hữu Phúc",
+    "publishedAt": "2024-10-15",
+    "thumbnail": "https://picsum.photos/id/117/600/400",
+    "description": "Áp dụng agile theo hướng thực dụng: xác định outcome, giới hạn WIP, retrospective hướng hành động, và đo lường bằng metric đơn giản. Chia sẻ template sprint giúp nhóm cải thiện liên tục.",
+    "shortDescription": "Áp dụng agile theo hướng thực dụng: xác định outcome, giới hạn WIP, retrospective hướng hành động, v"
+  },
+  {
+    "id": 18,
+    "title": "WebAssembly mở đường cho tính năng nặng",
+    "author": "Đinh Gia Phát",
+    "publishedAt": "2024-09-01",
+    "thumbnail": "https://picsum.photos/id/118/600/400",
+    "description": "WASM cho phép mang tác vụ nặng lên trình duyệt với hiệu năng gần native. Bài viết giải thích mô hình bộ nhớ, interop với JS, công cụ build và những trường hợp nên cân nhắc áp dụng.",
+    "shortDescription": "WASM cho phép mang tác vụ nặng lên trình duyệt với hiệu năng gần native. Bài viết giải thích mô hình"
+  }
+]

@@ -1,8 +1,8 @@
 import NavBar from "../../components/Navbar";
-import PostForm, { type PostFormValues } from "../../components/PostForm";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import articlesData from "../../assets/data/articles.json";
+import styles from "./postUpsert.module.css";
 
 type Article = {
   id: string | number;
@@ -29,12 +29,18 @@ export default function PostUpsertPage() {
   const { id } = useParams<{ id?: string }>();
   const navigate = useNavigate();
 
-  // load 1 lần
   const all = useMemo(() => getArticles(), []);
   const isEdit = Boolean(id);
 
-  // nếu là edit, tìm bài
   const [article, setArticle] = useState<Article | null>(null);
+  const [form, setForm] = useState({
+    title: "",
+    author: "",
+    thumbnail: "",
+    content: "",
+    category: "",
+  });
+
   useEffect(() => {
     if (isEdit) {
       const found = all.find((a) => String(a.id) === String(id)) || null;
@@ -44,13 +50,31 @@ export default function PostUpsertPage() {
         return;
       }
       setArticle(found);
+      setForm({
+        title: found.title,
+        author: found.author,
+        thumbnail: found.thumbnail,
+        content: found.content,
+        category: found.category,
+      });
     }
   }, [isEdit, id, all, navigate]);
 
-  // create hoặc update
-  const handleSubmit = async (values: PostFormValues) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const values = form;
+
+    if (!values.title || !values.author || !values.content) {
+      alert("Vui lòng điền đầy đủ thông tin!");
+      return;
+    }
+
     if (!isEdit) {
-      // CREATE
       const newItem: Article = {
         id: Date.now(),
         title: values.title,
@@ -66,14 +90,12 @@ export default function PostUpsertPage() {
       alert("Đăng bài thành công!");
       navigate("/posts");
     } else {
-      // UPDATE
       const next = all.map((a) =>
         String(a.id) === String(id)
           ? {
               ...a,
               ...values,
               shortDescription: values.content.slice(0, 100),
-              // publishedAt: a.publishedAt // giữ nguyên ngày cũ (tuỳ bạn)
             }
           : a
       );
@@ -83,8 +105,7 @@ export default function PostUpsertPage() {
     }
   };
 
-  // delete chỉ khi edit
-  const handleDelete = async () => {
+  const handleDelete = () => {
     if (!isEdit) return;
     const ok = confirm("Bạn có chắc muốn xóa bài viết này?");
     if (!ok) return;
@@ -95,25 +116,91 @@ export default function PostUpsertPage() {
   };
 
   return (
-    <>
+    <div className={styles.page}>
       <NavBar />
-      <PostForm
-        mode={isEdit ? "edit" : "create"}
-        initialValues={
-          isEdit && article
-            ? {
-                title: article.title,
-                author: article.author,
-                thumbnail: article.thumbnail,
-                content: article.content,
-                category: article.category as any,
-              }
-            : undefined
-        }
-        onSubmit={handleSubmit}
-        onDelete={isEdit ? handleDelete : undefined}
-        onCancel={() => (isEdit ? navigate(`/posts/${id}`) : navigate(-1))}
-      />
-    </>
+
+      <div className={styles.formContainer}>
+        <h1>{isEdit ? "Chỉnh sửa bài viết" : "Tạo bài viết mới"}</h1>
+
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.field}>
+            <label>Tiêu đề</label>
+            <input
+              type="text"
+              name="title"
+              value={form.title}
+              onChange={handleChange}
+              placeholder="Nhập tiêu đề bài viết"
+            />
+          </div>
+
+          <div className={styles.field}>
+            <label>Tác giả</label>
+            <input
+              type="text"
+              name="author"
+              value={form.author}
+              onChange={handleChange}
+              placeholder="Tên tác giả"
+            />
+          </div>
+
+          <div className={styles.field}>
+            <label>Danh mục</label>
+            <input
+              type="text"
+              name="category"
+              value={form.category}
+              onChange={handleChange}
+              placeholder="Ví dụ: Tâm lý, Khoa học, Kinh tế..."
+            />
+          </div>
+
+          <div className={styles.field}>
+            <label>Ảnh bìa (URL)</label>
+            <input
+              type="text"
+              name="thumbnail"
+              value={form.thumbnail}
+              onChange={handleChange}
+              placeholder="Dán link ảnh bìa..."
+            />
+          </div>
+
+          <div className={styles.field}>
+            <label>Nội dung</label>
+            <textarea
+              name="content"
+              value={form.content}
+              onChange={handleChange}
+              rows={8}
+              placeholder="Nhập nội dung bài viết..."
+            ></textarea>
+          </div>
+
+          <div className={styles.buttonGroup}>
+            <button type="submit" className={styles.btnPrimary}>
+              {isEdit ? "Cập nhật" : "Đăng bài"}
+            </button>
+            <button
+              type="button"
+              className={styles.btnSecondary}
+              onClick={() => navigate(-1)}
+            >
+              Hủy
+            </button>
+            {isEdit && (
+              <button
+                type="button"
+                className={styles.btnDanger}
+                onClick={handleDelete}
+              >
+                Xóa
+              </button>
+            )}
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
